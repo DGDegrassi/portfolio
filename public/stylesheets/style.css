@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
 }
 
 a {
@@ -8,5 +9,9 @@ a {
 }
 
 .firstpage {
-	background-color: grey
+	background-color: grey;
+	width: 100%;
+}
+
+.secondpage {
 }
