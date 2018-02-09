@@ -9,8 +9,10 @@ a {
 }
 
 .firstpage {
-	background-color: grey;
+/*	position:relative;*/
+	text-align: center;
 	width: 100%;
+	overflow:hidden;
 }
 
 .secondpage {
