@@ -1,5 +1,5 @@
 // First page set height to browser window
-$(document).ready(function() {
+$('.firstpage').ready(function() {
   function setHeight() {
     windowHeight = $(window).innerHeight();
     $('.firstpage').css('min-height', windowHeight);
@@ -11,6 +11,8 @@ $(document).ready(function() {
   });
 });
 
+
+// Color changing background: to line 76
 var colors = new Array(
   [66,0,0],
   
@@ -72,3 +74,8 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
 }
 
 setInterval(updateGradient,10);
+
+// Sticky navbar
+var sticky = new Waypoint.Sticky({
+  element: $('.navbar')[0]
+});

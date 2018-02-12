@@ -13,7 +13,52 @@ a {
 	text-align: center;
 	width: 100%;
 	overflow:hidden;
+	background-color: black;
+	/* sets initial height so the screen doesnt flash before js loads the windowHeight */
+	height:1000px;
 }
 
 .secondpage {
+	height:1500px;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #ededed;
+}
+
+.loader {
+	max-width: 15rem;
+	width: 100%;
+	height: auto;
+	stroke-linecap: round;
+}
+
+/* navbar stuff */
+.navbar {
+	background-color: #333;
+	overflow:hidden;
+	width:100%;
+}
+
+.navbar a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.navbar a.active {
+	background-color: #4CAF50;
+	color: white;
+}
+
+.stuck {
+	position:fixed;
+	top:0;
 }
