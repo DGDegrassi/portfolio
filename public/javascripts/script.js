@@ -79,3 +79,13 @@ setInterval(updateGradient,10);
 var sticky = new Waypoint.Sticky({
   element: $('.navbar')[0]
 });
+
+$('#scrollto2ndpage').click(function(event) {
+  event.preventDefault();
+  $('html, body').animate({
+    scrollTop: $('#secondpage').offset().top}, 500);
+});
+
+$('#scrollto2ndpage').hover(function() {
+  $(this).css("background-color", "yellow");
+});
