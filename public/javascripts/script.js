@@ -80,12 +80,24 @@ var sticky = new Waypoint.Sticky({
   element: $('.navbar')[0]
 });
 
+// Scrolls to 2nd page when clicked
 $('#scrollto2ndpage').click(function(event) {
   event.preventDefault();
   $('html, body').animate({
     scrollTop: $('#secondpage').offset().top}, 500);
 });
 
+// Sends arrow off the page when hovered over
 $('#scrollto2ndpage').hover(function() {
-  $(this).css("background-color", "yellow");
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    return;  
+  } else {
+    var elmnt = document.getElementById("scrollto2ndpage");
+    var arrowlocation = String(elmnt.offsetWidth / 2 - 12) + "px";
+    console.log(arrowlocation);
+    $('#moveable-fav').css("position", "fixed").css("margin-left", arrowlocation).animate({marginTop: "1000px"});
+    $('#scrollto2ndpage').css("padding-right", "37px").css("padding-left", "4.5px");
+
+  }
+  
 });

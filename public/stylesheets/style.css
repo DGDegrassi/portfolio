@@ -1,3 +1,4 @@
+
 body {
   padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -15,11 +16,11 @@ a {
 	overflow:hidden;
 	background-color: black;
 	/* sets initial height so the screen doesnt flash before js loads the windowHeight */
-	height:1000px;
+/*	height:1000px;*/
 }
 
 .firstpagecontent {
-	margin-top: 40%;
+	padding-top: 30%;
 	font-size: 36px;
 	color: white;
 	text-shadow: 2px 2px black;
@@ -30,23 +31,36 @@ a {
 	margin-bottom: 3px;
 }
 
+.firstpagetext {
+	margin-bottom:15px;
+}
 .myname {
 	color: red;
 }
 
 #scrollto2ndpage {
 	border-style:outset;
-	border-radius: 2px;
+	border-width:2px;
 	border-color:white;
 	display:inline-block;
 	padding-left:5px;
 	padding-right:5px; 
-	margin-top: 8px;
+	margin-top: -5px;
+	box-shadow:0px 0px, 0px 0px, 0px 0px, 0px 0px;
+	transition: border-color 3s, box-shadow 3s, border-radius 3s, background-color 3s;
 
+}
+
+#scrollto2ndpage:hover {
+	border-color:red;
+	box-shadow: 3px 3px red, 3px -3px red, -3px -3px red, -3px 3px red;
+	border-radius: 5px;
+	background-color: black;
 }
 
 #secondpage {
 	height:1500px;
+
 }
 
 .container {
@@ -89,3 +103,8 @@ a {
 	position:fixed;
 	top:0;
 }
+
+@media (min-width:1200px) {
+	.firstpagecontent {
+		padding-top:20%;
+	}
