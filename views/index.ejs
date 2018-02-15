@@ -6,9 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
-		<script src="javascripts/sticky.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
-		<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+	<script src="javascripts/sticky.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   </head>
   <body>
@@ -22,14 +22,41 @@
 		  </div>
 	  </div>
 	  <div class="navbar">
-		  <a class="active" href="#home">Home</a>
-		  <a href="#news">News</a>
-		  <a href="#contact">Contact</a>
-		  <a href="#about">About</a>
+		  <p id="homebutton">Home</p>
+		  <p id="aboutbutton">About</p>
+		  <p id="portfoliobutton">Portfolio</p>
+		  <p id="contactbutton">Contact</p>
 		</div>
-    <div id="secondpage">
+    <div class= "pages" id="about">
     	<p>This will be second page yes?</p>
     </div>
+    <div class= "pages" id="portfolio">
+    	<div class= "page-title">Portfolio</div>
+    	<div class="controls">
+    		<button type="button" class="control" data-filter="all">All</button>
+    		<button type="button" class="control" data-filter=".javascript">Javascript</button>
+    		<button type="button" class="control" data-filter=".ruby">Ruby</button>
+    	</div>
+    	<div class="container">
+    		<div class="row">
+		    	<div class="portfolio-container">
+		    		<img src= "images/ck2thumb-ep1.png" class="mix ruby">
+		    		<img src= "/images/ck2thumbep2.png" class="mix javascript">    	
+		    		<img src="/images/ck2thumbep3.png" class="mix ruby">
+		    		<img src="/images/ck2thumbep4.png" class=" mix ruby javascript">
+
+	<!--     		<div class="gap"></div>
+	    		<div class="gap"></div>
+	    		<div class="gap"></div> -->
+	    		</div>
+	    	</div>
+	    </div>
+    </div>
+    <div class= "pages" id="contact">
+    	<p>You find me here maybe?</p>
+    </div>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js></script>
     <script src="/javascripts/script.js"></script>
+
   </body>
 </html>

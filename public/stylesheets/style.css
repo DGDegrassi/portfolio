@@ -20,7 +20,8 @@ a {
 }
 
 .firstpagecontent {
-	padding-top: 30%;
+	display:inline-block;
+/*	padding-top: 30%;*/
 	font-size: 36px;
 	color: white;
 	text-shadow: 2px 2px black;
@@ -56,10 +57,27 @@ a {
 	box-shadow: 3px 3px red, 3px -3px red, -3px -3px red, -3px 3px red;
 	border-radius: 5px;
 	background-color: black;
+	cursor: pointer;
 }
 
-#secondpage {
-	height:1500px;
+.page-title {
+	text-align: center;
+	font-size: 50px;
+}
+.pages {
+	padding-top:50px;
+}
+
+#about {
+
+
+}
+
+#portfolio {
+	background-color: grey;
+}
+
+#contact {
 
 }
 
@@ -67,8 +85,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 100vh;
-	background-color: #ededed;
+/*	min-height: 100vh;*/
 }
 
 .loader {
@@ -83,20 +100,19 @@ a {
 	background-color: #333;
 	overflow:hidden;
 	width:100%;
+	position:absolute;
+	z-index:2;
 }
 
-.navbar a {
+.navbar p {
 	float: left;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 14px 16px;
+	padding-left: 10px;
+	padding-right: 15px;
 	text-decoration: none;
 	font-size: 17px;
-}
-
-.navbar a.active {
-	background-color: #4CAF50;
-	color: white;
+	cursor: pointer;
 }
 
 .stuck {
@@ -104,7 +120,144 @@ a {
 	top:0;
 }
 
-@media (min-width:1200px) {
+/*@media (min-width:1200px) {
 	.firstpagecontent {
 		padding-top:20%;
+	}*/
+
+/* Mixitup */
+
+/* Controls
+---------------------------------------------------------------------- */
+
+.controls {
+    padding: 1rem;
+    background: #333;
+    font-size: 0.1px;
+    background: transparent;
+    text-align: center;
+}
+
+.control {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 25px;
+    background:transparent;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border:none;
+
+}
+
+button:focus{
+	outline: none;
+}
+
+.mixitup-control-active {
+    background: #393939;
+}
+
+/*.mixitup-control-active[data-filter]:after {
+    background: transparent;
+}
+*/
+/*.control:first-of-type {
+    border-radius: 3px 0 0 3px;
+}
+
+.control:last-of-type {
+    border-radius: 0 3px 3px 0;
+}
+
+.control[data-filter] + .control[data-sort] {
+    margin-left: .75rem;
+}*/
+
+/*.control[data-filter=".javascript"] {
+    color: #91e6c7;
+}
+
+.control[data-filter=".ruby"] {
+    color: #5ecdde;
+}
+
+.control[data-filter=".pink"] {
+    color: #d595aa;
+}
+
+.control[data-filter="none"] {
+    color: #2f2f2f;
+}*/
+
+/* Container
+---------------------------------------------------------------------- */
+
+.portfolio-container {
+    text-align: center;
+    max-width:800px;
+
+}
+
+.portfolio-container:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+/* Target Elements
+---------------------------------------------------------------------- */
+
+/*.mix,
+.gap {
+    display: inline-block;
+    vertical-align: top;
+}*/
+
+.mix {
+/*    background: #fff;*/
+/*    border-top: .5rem solid currentColor;*/
+/*    border-radius: 2px;
+    margin-bottom: 1rem;*/
+/*    position: relative;*/
+    height: 400px;
+    width: auto;
+/*    display:inline-block;*/
+}
+
+.mix:before {
+    content: '';
+    display: inline-block;
+    padding-top: 56.25%;
+}
+
+/*.mix.javascript {
+    color: #91e6c7;
+}
+
+.mix.pink {
+    color: #d595aa;
+}
+
+.mix.ruby {
+    color: #5ecdde;
+}*/
+
+/* Grid Breakpoints
+---------------------------------------------------------------------- */
+/* Images fill small screens*/
+@media(max-width:720px) {
+	.mix {
+		width:100vw;
+		height:auto;
 	}
+}
+/* 2 Columns for large screens*/
+@media(min-width:720px) {
+	.mix,
+	.gap {
+    	width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+    }
+}
