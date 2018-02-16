@@ -63,6 +63,8 @@ a {
 .page-title {
 	text-align: center;
 	font-size: 50px;
+	margin-top: 20px;
+	margin-bottom:25px;
 }
 .pages {
 	padding-top:50px;
