@@ -65,22 +65,16 @@ $('#scrollto2ndpage').hover(function() {
   } 
 });
 
-$('#contact-form').submit(function(e) {
-  var name = $('#contact-name'),
-      email = $('#contact-email'),
-      message = $('contact-content');
-  if(!name.value || !email.value || !message.value) {
-    //error needed
-  } else {
-    $.ajax( {
-      url: "https://formspree.io/dgdegrassi@gmail.com",
-      method: "POST",
-      data: $(this).serialize(),
-      dataType: "json"
-    });
-    e.prevent.Default()
-    $(this).get(0).reset()
-    //alert for success
-  }
-});
 
+$("#contact-form").submit(function(){
+    var nameval = document.getElementById("contact-name");
+    var emailval = document.getElementById("contact-email");
+    var messageval = document.getElementById("contact-content");
+    $.post("/contact",
+    {
+        name: nameval.value,
+        email: emailval.value,
+        message: messageval.value
+    });
+    return false;
+});

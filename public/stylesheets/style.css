@@ -35,9 +35,11 @@ a {
 .firstpagetext {
 	margin-bottom:15px;
 }
+
 .myname {
 	color: red;
 }
+
 
 #scrollto2ndpage {
 	border-style:outset;
@@ -66,13 +68,45 @@ a {
 	margin-top: 20px;
 	margin-bottom:25px;
 }
+
 .pages {
 	padding-top:50px;
 }
 
 #about {
+}
 
+.text-center {
+	text-align: center;
+}
 
+.about-keywords-list {
+	text-align: center;
+}
+
+.about-keywords {
+	position:relative;
+	display:inline-block;
+	margin-left:10px;
+	padding-bottom:50px;
+	vertical-align: top;
+
+}
+
+#skills-tools {
+	width:40%;
+}
+
+#about-me-blurb {
+	max-width:1200px;
+}
+.about-text {
+	width: 200px;
+	word-wrap: break-word;
+}
+.about-img {
+	max-width:200px;
+	height:auto;
 }
 
 #portfolio {
@@ -255,6 +289,10 @@ button:focus{
 		width:100vw;
 		height:auto;
 	}
+
+	#skills-tools {
+		width:90%;
+	}
 }
 /* 2 Columns for large screens*/
 @media(min-width:720px) {
@@ -262,4 +300,10 @@ button:focus{
 	.gap {
     	width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
     }
+}
+
+@media(min-width: 1600px) {
+	#skills-tools {
+		width:30%;
+	}
 }
