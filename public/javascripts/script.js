@@ -3,6 +3,7 @@ var pageHeights = function(page) {
   $(page).ready(function() {
     function setHeight() {
       windowHeight = $(window).innerHeight();
+      windowHeight = windowHeight
       $(page).css('min-height', windowHeight);
     };
     setHeight();
@@ -10,8 +11,13 @@ var pageHeights = function(page) {
       setHeight();
     });
 
+// Sets some specific numbers for the first page and the contact page
     paddingTop = String(windowHeight * .3 + "px");
+    contactHeight = String(windowHeight - 100 + 'px')
+    firstPageBG = String(windowHeight * 2 + 'px')
     $('.firstpagecontent').css('padding-top', paddingTop);
+    $('#contact').css('min-height', contactHeight );
+
   });
 };
 
@@ -21,11 +27,13 @@ pageHeights('#about');
 pageHeights('#portfolio')
 pageHeights('#contact');
 
-// instatianes .portfolio-container mixer
+
+// Focus on
+// instantianes .portfolio-container mixer
 var mixer = mixitup('.portfolio-container');
 
 
-// Sticky navbar
+// Sticky navbar with waypoint
 var sticky = new Waypoint.Sticky({
   element: $('.navbar')[0]
 });
@@ -39,33 +47,67 @@ var scrollToPage = function(clicked, target) {
   });
 };
 
+// Sets active navbar link
+var activePage = function(page, active){
+  var aboutwp = new Waypoint.Inview({
+    element: page,
+    enter: function(direction) {
+      $('nav>.active-nav').removeClass('active-nav');
+      $(active).addClass('active-nav');
+    }
+  });
+};
+// var activeHelp = function(page, active){
+//   var aboutwp = new Waypoint({
+//     element: document.getElementById(page),
+//     handler: function(direction) {
+//       $('nav>.active-nav').removeClass('active-nav');
+//       $(active).addClass('active-nav');
+//     }
+//   });
+// };
+
 // Scroll to 'About' page when button on first page is clicked
 scrollToPage('#scrollto2ndpage', '#about');
 
 // Scrolls to each page when you click on navbar
 scrollToPage('#homebutton', '.firstpage');
-scrollToPage('#aboutbutton', '#about');
-scrollToPage('#portfoliobutton', '#portfolio');
-scrollToPage('#contactbutton', '#contact');
+scrollToPage('#aboutbutton', '#about-waypoint');
+scrollToPage('#portfoliobutton', '#portfolio-waypoint');
+scrollToPage('#contactbutton', '#contact-waypoint');
+// Scrolls back to top from footer
+scrollToPage('#back-to-top-div', '.firstpage');
 
+// Sets active navbar link for each page
+activePage('#about', '#aboutbutton');
+activePage('#home', '#homebutton');
+activePage('#portfolio', '#portfoliobutton');
+activePage('#contact', '#contactbutton');
 
-// Sends arrow off the page when hovered over
-$('#scrollto2ndpage').hover(function() {
-  // invalidates for small screens
-  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
-    return;  
-  } else {
-    // finds exactly where the arrow will be located as it moves down (and out of the 'scrollto2ndpage' div it starts in)
-    var elmnt = document.getElementById("scrollto2ndpage");
-    var arrowlocation = String(elmnt.offsetWidth / 2 - 12) + "px";
-    // moves the arrow down
-    $('#moveable-fav').css("position", "fixed").css("margin-left", arrowlocation).animate({marginTop: "1000px"}, 700);
-    // sets the scrollto2ndpage div to accomodate for the missing favicon
-    $('#scrollto2ndpage').css("padding-right", "37px").css("padding-left", "4.5px");
-  } 
-});
+// Hack to get the About and Contact page waypoints to
+// cooperate!
 
+// $('#aboutbutton').click(function(event){
+//   console.log("ppoooooppp");
+//   $('nav>.active-nav').delay(5000).removeClass('active-nav');
+//   $('#aboutbutton').delay(5000).addClass('active-nav');
+// })
 
+// For future validation incase HTML5 validations don't work.
+// Lower Priority
+// $("#contact-form").onclick(function(){
+  // var nameval = document.getElementById("contact-name");
+  // var emailval = document.getElementById("contact-email");
+  // var messageval = document.getElementById("contact-content");
+//   if( !nameval.value || !emailval.value || !messageval.value) {
+//     console.log("missingfields")
+//   } else if() {
+
+//   }
+
+// })
+
+// AJAX for submitting contact form without reloading any pages
 $("#contact-form").submit(function(){
     var nameval = document.getElementById("contact-name");
     var emailval = document.getElementById("contact-email");

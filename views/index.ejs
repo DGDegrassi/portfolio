@@ -3,7 +3,9 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Karma|Raleway" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 	<script src="javascripts/sticky.min.js"></script>
@@ -12,57 +14,106 @@
 
   </head>
   <body>
-		<div class="firstpage">
+		<div class="firstpage" id="home">
 			<div class="firstpagecontent">
 				<div class="firstpagetext">
 		    	<p>Hello, I'm <span class="myname">Daniel Degrassi</span>.</p>
 		    	<p>I'm a full stack developer</p>
 		  	</div>
-		    <p id="scrollto2ndpage">Check out my JAMMIE JAMS     <i class="fas fa-angle-double-down" id="moveable-fav"></i></p>
+		    <p id="scrollto2ndpage">Check out my JAMMIE JAM<i class="fas fa-arrow-down"></i></p>
 		  </div>
 	  </div>
-	  <div class="navbar">
-		  <p id="homebutton">Home</p>
+	  <nav class="navbar">
+		  <p id="homebutton" class="active-nav">Home</p>
 		  <p id="aboutbutton">About</p>
 		  <p id="portfoliobutton">Portfolio</p>
 		  <p id="contactbutton">Contact</p>
-		</div>
+		</nav>
+    <!-- div below is a hack to get waypoint.inView to work -->
+    <div id="about-waypoint" class="wp-helper"></div>
     <div class= "pages" id="about">
-    	<p class="page-title">About</p>
+    	<p class="page-title bb-about">About</p>
+      <div class="bottom-border"></div>
         <div class="text-center">
             <li class="about-keywords">
-                <img src="images/ck2thumb-ep1.png" class="about-img">
+                <i class="fas fa-rocket about-icon"></i>
                 <div class="about-title">Fast</div>
                 <div class="about-text">Fast load times and lag free interaction, my highest priority.</div>
             </li>
             <li class="about-keywords">
-                <img src="images/ck2thumb-ep1.png" class="about-img">
-                <div class="about-title">Responsive</div>
-                <div class="about-text">My layouts will work on any device, big or small.</div>
-            </li>
-            <li class="about-keywords">
-                <img src="images/ck2thumb-ep1.png" class="about-img">
+                <i class="fab fa-medapps about-icon"></i>
                 <div class="about-title">Intuitive</div>
                 <div class="about-text">Strong preference for easy to use, intuitive UX/UI.</div>
             </li>
             <li class="about-keywords">
-                <img src="images/ck2thumbep2.png" class="about-img">
+                <i class="fab fa-gripfire about-icon"></i>
                 <div class="about-title">Dynamic</div>
                 <div class="about-text">Websites don't have to be static, I love making pages come to life.</div>
             </li>
+            <li class="about-keywords">
+                <i class="fas fa-mobile about-icon"></i>
+                <div class="about-title">Responsive</div>
+                <div class="about-text">My layouts will work on any device, big or small.</div>
+            </li>
         </div>
         <div class="text-center">
-            <div class="about-keywords">
-                <img src="images/ck2thumb-ep1.png" class="about-img">
-                <div class="about-text">A little blurb about me will go here</div>
+          <div class="about-keywords">
+              <img src="images/me2.jpeg" class="about-img">
+              <div id="about-blurb">
+                A little blurb about me will go here
+              </div>
+          </div>
+          <div class="about-keywords" id="skills-tools-div">
+            <div>
+              Skills and Tools
             </div>
-            <div class="about-keywords" id="skills-tools">
-                My skills and languages and such will go here.  he has it in a cool graphical overlay thingie, but i'll probalby do something a little different.  either just lay it out in text or some other graphical table that doesnt rely on percentages.
+            <div class="container">
+              <div class="skills-tools">
+                <i class="fas fa-code skills-tools-icon"></i>
+                <div>
+                  HTML
+                </div>
+              </div>
+              <div class="skills-tools">
+                <i class="fab fa-css3 skills-tools-icon"></i> 
+                <div class="css-text-fix">
+                  CSS
+                </div>
+              </div>
+              <div class="skills-tools">
+                <i class="far fa-gem skills-tools-icon" ></i> 
+                <div>
+                RUBY/RAILS
+                </div> 
+              </div>
             </div>
-        </div>
+            <div class="container">
+              <div class="skills-tools">
+                <i class="fab fa-js-square skills-tools-icon"></i>
+                <div>
+                JAVASCRIPT
+              </div>
+              </div>
+              <div class="skills-tools">
+                <i class="fab fa-node-js skills-tools-icon"></i>
+                <div>
+                  NODE.JS
+                </div>
+              </div>
+              <div class="skills-tools">
+                <i class="fas fa-pencil-alt skills-tools-icon"></i>
+                <div>
+                  UI DESIGN
+                </div>
+              </div> 
+            </div>
+          </div>
+      </div>
     </div>
+    <div id="portfolio-waypoint" class="wp-helper"></div>
     <div class= "pages" id="portfolio">
-    	<div class= "page-title">Portfolio</div>
+    	<div class= "page-title bb-portfolio">Portfolio</div>
+      <div class="bottom-border"></div>
     	<div class="controls">
     		<button type="button" class="control" data-filter="all">All</button>
     		<button type="button" class="control" data-filter=".javascript">Javascript</button>
@@ -83,20 +134,39 @@
 	    	</div>
 	    </div>
     </div>
+    <div id="contact-waypoint" class="wp-helper"></div>
     <div class= "pages" id="contact">
-    	<div class="page-title">Contact</div>
-    	<div>
+    	<div class="page-title bb-contact">Contact</div>
+      <p class= text-under-title>Have a question or want to work together?</p>
+    	<div class="container">
     		<form id="contact-form">
-    			<input id="contact-name" type="text" name="name" placeholder="Enter your name.">
-    			<input id="contact-email" type="text" name="email" placeholder="Enter your email">
-    			<input id="contact-content" type="text" name="message" placeholder="what do you have to say for yourself">
-    			<input type="submit" value="Done">
+          <div>
+            <input id="contact-name" type="text" name="name" placeholder="Enter your name." class="input-style" required>
+          </div>
+          <!-- Company input doesn't show up on page to catch spambots -->
+          <div>
+            <input id="company" type="text" placeholder="Enter Company" name="company" size="50">
+          </div>
+          <div class="each-input">
+    			 <input id="contact-email" type="email" name="email" placeholder="Enter your email" class="input-style" required>
+          </div>
+          <div class="each-input">
+    			  <textarea id="contact-content" name="message" placeholder="Your Message" class="input-style" resize="vertical" rows="13" required></textarea>
+          </div>
+          <div class="each-input submit-button-div">
+     			  <input class="submit-button" type="submit" value="Submit">
+          </div>
     		</form>
-    	</div>
+     	</div>
+      <div class="footer text-center" id="footer">
+        <div id="back-to-top-div">
+          <i id="back-to-top" class="fas fa-angle-double-up"></i>
+        </div>
+        <p>Footer stuff will go here</p>
+      </div>
     </div>
+
     <script src=https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js></script>
     <script src="/javascripts/script.js"></script>
-    <script src="/javascripts/gradientbackground.js"></script>
-
   </body>
 </html>
