@@ -133,11 +133,12 @@ a {
 
 #about-blurb {
 	margin-top:20px;
+	width:400px;
 }
 
 #skills-tools-title {
-	font-size: 26px;
-	margin-top:5px;
+	font-size: 32px;
+	margin-top:0px;
 
 }
 
@@ -146,7 +147,7 @@ a {
 	display:block;
 	margin: 0 auto;
 	width: 100px;
-	padding-top:25px;
+	padding-top:35px;
 	border-bottom:2px solid black;
 	margin-bottom:0px;
 }
@@ -166,30 +167,26 @@ a {
 	margin-bottom: 10px;
 }
 
-
-.css-text-fix {
-	margin-left:-10px;
-}
-
-
 .about-text {
 	width: 200px;
 	word-wrap: break-word;
 }
 .about-img {
-	max-width:200px;
+	max-width:250px;
 	height:auto;
-	border-radius:50px;
-	margin-top:10px;
+	border-radius:20px;
+
+	border: 1px solid #021a40;
 }
 
 .about-icon {
 	font-size:100px;
 	margin-bottom:20px;
 }
-#portfolio {
+#portfolio, #portfolio-waypoint {
 	background-color: #9DA1A3;
 }
+
 
 .flex {
   display: flex;
@@ -200,7 +197,7 @@ a {
     flex-direction: row; }
   .flex.wrap {
     flex-wrap: wrap; }
-
+.p
 
 #gallery .text {
 	top:0;
@@ -211,7 +208,7 @@ a {
 	right:0;
 }
 #gallery {
-  margin: 20px 0;
+  margin-top: 20px;
 }
 #gallery .text, #gallery .button {
         z-index: 2;
@@ -251,18 +248,23 @@ a {
           background: url("/images/flixster.png") center center/cover; }
 #gallery .mix:nth-child(5) .card {
 	background: url("/images/todo.png") center center/cover; }
-/*	#gallery .mix:nth-child(6) .card {
-		background: url("/images/todo.png") center center/cover;
-	}
-*/
 
 #gallery .mix .card {
           height: 400px;
           width:400px;
           cursor: pointer;
           transition: opacity .5s; }
+
+/* Invisible div hotfix for mixitup wrap issues
+   Part two of this is in @media stuff below */
+.invis-div {
+	cursor: default!important;
+}
+
  #gallery .mix:hover .card {
           opacity: 0; }
+}
+}
 #gallery .mix:hover .text {
           opacity: 1;
           top: 33%; }
@@ -274,6 +276,11 @@ a {
 	background-color:#1E303B;
 	color:white;
 	position:relative;
+}
+
+#contact-waypoint {
+		background-color:#1E303B;
+		padding-top:-10px;
 }
 .bb-contact {
 	border-color:white!important;
@@ -411,7 +418,7 @@ nav .icon {
 }
 
 .footer {
-	height:120px;
+	height:160px;
 	background-color: #111B21;
 	color:white;
 	position:absolute;
@@ -420,6 +427,21 @@ nav .icon {
 
 }
 
+.footer-links {
+	margin-top:20px;
+	font-size: 44px;
+	margin-left: 10px;
+}
+
+.copyright {
+	font-size:14px;
+	margin-top:20px;
+	color:grey;
+}
+
+.copyright-date {
+	color: #CC0044;
+}
 #back-to-top {
 	cursor:pointer;
 	margin-top:-500px;
@@ -470,23 +492,6 @@ button:focus{
 
 }
 
-
-/* Container
----------------------------------------------------------------------- */
-
-.portfolio-container {
-    text-align: center;
-    max-width:800px;
-
-}
-
-.portfolio-container:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-}
-
-
 /* Grid Breakpoints
 ---------------------------------------------------------------------- */
 
@@ -530,6 +535,8 @@ section:nth-of-type(3) #gallery .mix .card {
 
 }
 
+
+/* Navbar responsiveness*/
 @media(max-width:607px) {
 	.firstpage {
 		height:600px;
@@ -559,6 +566,14 @@ section:nth-of-type(3) #gallery .mix .card {
     	padding-top: 50px;
     }
 }
+
+/* Hotfix for mixitup wrap silliness */
+@media(min-width: 1200px) {
+	.invis-div {
+		display:none;
+}
+}
+
 @media(min-width: 1600px) {
 	#skills-tools {
 		width:30%;
