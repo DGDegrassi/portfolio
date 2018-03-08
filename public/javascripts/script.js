@@ -12,7 +12,7 @@ var pageHeights = function(page) {
     });
 
 // Sets some specific numbers for the first page and the contact page
-    paddingTop = String(windowHeight * .3 + "px");
+    paddingTop = String(windowHeight * .4 + "px");
     contactHeight = String(windowHeight - 100 + 'px')
     firstPageBG = String(windowHeight * 2 + 'px')
     $('.firstpagecontent').css('padding-top', paddingTop);
@@ -33,9 +33,19 @@ pageHeights('#contact');
 var mixer = mixitup('.portfolio-container');
 
 
+// Responsive navbar
+function myFunction() {
+    var x = document.getElementById("myNavbar");
+    if (x.className === "navbar") {
+        x.className += " responsive";
+    } else {
+        x.className = "navbar";
+    }
+}
+
 // Sticky navbar with waypoint
 var sticky = new Waypoint.Sticky({
-  element: $('.navbar')[0]
+  element: $('#myNavbar')[0]
 });
 
 // Function to Scroll to a target when something is clicked
@@ -51,21 +61,12 @@ var scrollToPage = function(clicked, target) {
 var activePage = function(page, active){
   var aboutwp = new Waypoint.Inview({
     element: page,
-    enter: function(direction) {
+    exit: function(direction) {
       $('nav>.active-nav').removeClass('active-nav');
       $(active).addClass('active-nav');
     }
   });
 };
-// var activeHelp = function(page, active){
-//   var aboutwp = new Waypoint({
-//     element: document.getElementById(page),
-//     handler: function(direction) {
-//       $('nav>.active-nav').removeClass('active-nav');
-//       $(active).addClass('active-nav');
-//     }
-//   });
-// };
 
 // Scroll to 'About' page when button on first page is clicked
 scrollToPage('#scrollto2ndpage', '#about');
@@ -84,39 +85,51 @@ activePage('#home', '#homebutton');
 activePage('#portfolio', '#portfoliobutton');
 activePage('#contact', '#contactbutton');
 
-// Hack to get the About and Contact page waypoints to
-// cooperate!
 
-// $('#aboutbutton').click(function(event){
-//   console.log("ppoooooppp");
-//   $('nav>.active-nav').delay(5000).removeClass('active-nav');
-//   $('#aboutbutton').delay(5000).addClass('active-nav');
-// })
-
+// Portfolio
+$('#chateau').hover(function(){
+  $(this).animate({opacity: 0}, 500)
+  }, function(){
+  $(this).animate({opacity: 1}, 500)
+});
 // For future validation incase HTML5 validations don't work.
 // Lower Priority
-// $("#contact-form").onclick(function(){
-  // var nameval = document.getElementById("contact-name");
-  // var emailval = document.getElementById("contact-email");
-  // var messageval = document.getElementById("contact-content");
-//   if( !nameval.value || !emailval.value || !messageval.value) {
-//     console.log("missingfields")
-//   } else if() {
-
-//   }
-
-// })
 
 // AJAX for submitting contact form without reloading any pages
 $("#contact-form").submit(function(){
     var nameval = document.getElementById("contact-name");
     var emailval = document.getElementById("contact-email");
     var messageval = document.getElementById("contact-content");
+
+
     $.post("/contact",
     {
         name: nameval.value,
         email: emailval.value,
         message: messageval.value
     });
+
+    // Custom thank you for sending an email
+    var cc = $('#contact-container');
+      cc.animate({
+      width: '0px',
+      height: '0px'
+      }, 500
+    );
+    var ty = $('#thank-you');
+    setTimeout(function(){
+      cc.css('display', 'none')
+      }, 499
+    );
+    setTimeout(function(){
+      ty.css('display', 'initial')
+      }, 501
+
+    );
+    setTimeout(function(){
+      ty.animate({color: 'white', borderColor: 'white'}, 1000);
+      }, 550
+    );
+
     return false;
 });

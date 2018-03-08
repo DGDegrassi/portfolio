@@ -28,54 +28,6 @@ app.use('/', index);
 app.use('/users', users);
 
 app.post('/contact', function (req, res) {
-	//Honeypot for spambots
-	// if (req.body.company) {
-	// 	res.render('contact', {
-	// 		title: 'Contact',
-	// 		err: true,
-	// 		page: 'contact',
-	// 		type: 'empty',
-	// 		body: req.body.message,
-	// 		name: req.body.name,
-	// 		email: req.body.email,
-	// 		msg: "Spambot detected!",
-	// 		description: 'spam' 
-	// 	});
-	// 	return;
-	// }
-	// Check if all required fields are filled
-	// if (!req.body.name || !req.body.email || !req.body.message) {
-	// 	res.render('contact', {
-	// 		title: 'Contact',
-	// 		err: true,
-	// 		page: 'contact',
-	// 		type: 'empty',
-	// 		body: req.body.message,
-	// 		name: req.body.name,
-	// 		email: req.body.email,
-	// 		msg: "Please fill in all fields",
-	// 		description: 'not successfully sent' 
-	// 	});
-	// 	return;
-	// }
-
-	// Check for valid email
-	// var email_check = validator.validate(req.body.email);
-	// if (email_check == false) {
-	// 	res.render('contact', {
-	// 		title: 'Contact',
-	// 		err: true,
-	// 		page: 'contact',
-	// 		type: 'empty',
-	// 		body: req.body.message,
-	// 		name: req.body.name,
-	// 		email: req.body.email,
-	// 		msg: "Please use a valid email address.",
-	// 		description: 'not successfully sent' 
-	// 	});
-	// 	return;
-	// }
-
 	// nodemailer with OAuth2 authentication
 	var transporter = nodemailer.createTransport({
 		service: 'gmail',

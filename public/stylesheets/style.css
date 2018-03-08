@@ -192,7 +192,12 @@ a {
 #portfolio {
 	background-color: white;
 }
-
+/*
+#chateau {
+	background-image: url("../images/chateau2.png" );
+	height:auto;
+	background-size:contain;
+}*/
 #contact {
 	background-color:#1E303B;
 	color:white;
@@ -229,8 +234,21 @@ a {
 	width:50%;
 }
 
+#contact-container {
+	width:100%;
+}
+
+#thank-you {
+	padding:30px;
+	font-size: 20px;
+	color:#1E303B;
+	display:none;
+	margin-top:50px;
+	border: 1px solid #1E303B;
+}
 #contact-content {
 }
+
 input, textarea {
 	font: 16px "Raleway", Helvetica, Arial, sans-serif;
 	color:white;
@@ -303,9 +321,18 @@ textarea {
 }
 
 nav .active-nav {
-	color: red!important;
+	color: #CC0044!important;
 	transition: color 0.5s;
 }
+
+nav .icon {
+	display: none;
+	color:white;
+	padding-top:16px;
+	padding-right:5px;
+	text-decoration: none;
+}
+
 .stuck {
 	position:fixed;
 	top:0;
@@ -356,6 +383,7 @@ nav .active-nav {
     margin-left: 20px;
     margin-right: 20px;
     border:none;
+    transition: background 1s;
 
 }
 
@@ -364,7 +392,7 @@ button:focus{
 }
 
 .mixitup-control-active {
-    background: #FA4BCB;
+    background: #CC0044;
 
 }
 
@@ -431,7 +459,7 @@ button:focus{
     margin-bottom: 1rem;*/
 /*    position: relative;*/
     height: 400px;
-    width: auto;
+    width: 400px;
 /*    display:inline-block;*/
 }
 
@@ -470,13 +498,16 @@ button:focus{
 		margin-left:0;
 		margin-right:0;
 		width:100%;
+
 	}
 }
 /* 2 Columns for large screens*/
 @media(min-width:720px) {
 	.mix,
-	.gap {
+	.gap,
+	#chateau {
     	width: calc(100%/2 - (((2 - 1) * 1rem) / 2));
+    	height:auto;
     }
     #skills-tools-div {
     	margin-left:100px;
@@ -486,10 +517,35 @@ button:focus{
 }
 
 @media(max-width:607px) {
+	.firstpage {
+		height:600px;
+	}
+    .navbar p:not(:first-child) {
+    	display: none;
+    }
+
+
+  	.navbar a.icon {
+    	float: right;
+    	display: block;
+  	}
+
+  	.navbar.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .navbar.responsive a, .navbar.responsive p {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
     #skills-tools-div {
     	margin-left:0;
 
     }
+
         #footer {
     	padding-top: 50px;
     }

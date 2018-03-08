@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
 	<script src="javascripts/sticky.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   </head>
@@ -20,14 +21,15 @@
 		    	<p>Hello, I'm <span class="myname">Daniel Degrassi</span>.</p>
 		    	<p>I'm a full stack developer</p>
 		  	</div>
-		    <p id="scrollto2ndpage">Check out my JAMMIE JAM<i class="fas fa-arrow-down"></i></p>
+		    <p id="scrollto2ndpage">Learn more about me<i class="fas fa-arrow-down"></i></p>
 		  </div>
 	  </div>
-	  <nav class="navbar">
+	  <nav class="navbar" id="myNavbar">
 		  <p id="homebutton" class="active-nav">Home</p>
 		  <p id="aboutbutton">About</p>
 		  <p id="portfoliobutton">Portfolio</p>
 		  <p id="contactbutton">Contact</p>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 		</nav>
     <!-- div below is a hack to get waypoint.inView to work -->
     <div id="about-waypoint" class="wp-helper"></div>
@@ -112,20 +114,22 @@
     </div>
     <div id="portfolio-waypoint" class="wp-helper"></div>
     <div class= "pages" id="portfolio">
-    	<div class= "page-title bb-portfolio">Portfolio</div>
+    	<div class= "page-title bb-portfolio">Projects</div>
       <div class="bottom-border"></div>
     	<div class="controls">
     		<button type="button" class="control" data-filter="all">All</button>
     		<button type="button" class="control" data-filter=".javascript">Javascript</button>
-    		<button type="button" class="control" data-filter=".ruby">Ruby</button>
+    		<button type="button" class="control" data-filter=".ruby">Ruby/Rails</button>
+        <button type="button" class="control" data-filter=".student">Student</button>
     	</div>
     	<div class="container">
     		<div class="row">
 		    	<div class="portfolio-container">
-		    		<img src= "images/ck2thumb-ep1.png" class="mix ruby">
-		    		<img src= "/images/ck2thumbep2.png" class="mix javascript">    	
-		    		<img src="/images/ck2thumbep3.png" class="mix ruby">
-		    		<img src="/images/ck2thumbep4.png" class=" mix ruby javascript">
+		    		<img src= "images/chateau2.png" class="mix ruby" id="chateau">
+            <img src="/images/portfolio.png" class=" mix javascript">
+		    		<img src= "/images/delphi1.png" class="mix ruby student">    	
+		    		<img src="/images/flixster.png" class="mix ruby student">
+		    		
 
 	<!--     		<div class="gap"></div>
 	    		<div class="gap"></div>
@@ -139,24 +143,28 @@
     	<div class="page-title bb-contact">Contact</div>
       <p class= text-under-title>Have a question or want to work together?</p>
     	<div class="container">
-    		<form id="contact-form">
-          <div>
-            <input id="contact-name" type="text" name="name" placeholder="Enter your name." class="input-style" required>
-          </div>
-          <!-- Company input doesn't show up on page to catch spambots -->
-          <div>
-            <input id="company" type="text" placeholder="Enter Company" name="company" size="50">
-          </div>
-          <div class="each-input">
-    			 <input id="contact-email" type="email" name="email" placeholder="Enter your email" class="input-style" required>
-          </div>
-          <div class="each-input">
-    			  <textarea id="contact-content" name="message" placeholder="Your Message" class="input-style" resize="vertical" rows="13" required></textarea>
-          </div>
-          <div class="each-input submit-button-div">
-     			  <input class="submit-button" type="submit" value="Submit">
-          </div>
-    		</form>
+        <div class='text-center' id="thank-you">Thanks for your message, I'll get back to you as soon as I can!</div>
+    		<div id='contact-container'>
+
+          <form id="contact-form">
+            <div>
+              <input id="contact-name" type="text" name="name" placeholder="Enter your name." class="input-style" required>
+            </div>
+            <!-- Company input doesn't show up on page to catch spambots -->
+            <div>
+              <input id="company" type="text" placeholder="Enter Company" name="company" size="50">
+            </div>
+            <div class="each-input">
+      			 <input id="contact-email" type="email" name="email" placeholder="Enter your email" class="input-style" required>
+            </div>
+            <div class="each-input">
+      			  <textarea id="contact-content" name="message" placeholder="Your Message" class="input-style" resize="vertical" rows="13" required></textarea>
+            </div>
+            <div class="each-input submit-button-div">
+       			  <input class="submit-button" type="submit" value="Submit">
+            </div>
+      		</form>
+        </div>
      	</div>
       <div class="footer text-center" id="footer">
         <div id="back-to-top-div">
