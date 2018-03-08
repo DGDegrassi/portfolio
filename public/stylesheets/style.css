@@ -187,7 +187,6 @@ a {
 	background-color: #9DA1A3;
 }
 
-
 .flex {
   display: flex;
   flex-direction: column;
@@ -197,7 +196,6 @@ a {
     flex-direction: row; }
   .flex.wrap {
     flex-wrap: wrap; }
-.p
 
 #gallery .text {
 	top:0;
@@ -219,7 +217,7 @@ a {
 #gallery .text .bold, #gallery .button .bold {
         font-size: 16pt; 
 }
-#gallery .button {
+#gallery .button{
         right: 0;
         bottom: 0;
         left: 0;
@@ -236,7 +234,7 @@ a {
 /*#gallery .mix .waypoint {
           background: #fff; }*/
 #gallery .mix .button:hover {
-          background: #E31B6D;
+          background: #CC0044;
           color: #fff; }
 #gallery .mix:nth-child(1) .card {
           background: url("/images/chateau2.png") center center/cover; }
@@ -263,8 +261,7 @@ a {
 
  #gallery .mix:hover .card {
           opacity: 0; }
-}
-}
+
 #gallery .mix:hover .text {
           opacity: 1;
           top: 33%; }
