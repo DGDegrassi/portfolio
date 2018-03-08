@@ -8,34 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
-	<script src="javascripts/sticky.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+  <script src="javascripts/sticky.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
   <script src="//cdn.jsdelivr.net/jquery.color-animation/1/mainfile"></script>
-	<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   </head>
   <body>
-		<div class="firstpage" id="home">
-			<div class="firstpagecontent">
-				<div class="firstpagetext">
-		    	<p>Hello, I'm <span class="myname">Daniel Degrassi</span>.</p>
-		    	<p>I'm a full stack developer</p>
-		  	</div>
-		    <p id="scrollto2ndpage">Learn more about me<i class="fas fa-arrow-down"></i></p>
-		  </div>
-	  </div>
-	  <nav class="navbar" id="myNavbar">
-		  <p id="homebutton" class="active-nav">Home</p>
-		  <p id="aboutbutton">About</p>
-		  <p id="portfoliobutton">Portfolio</p>
-		  <p id="contactbutton">Contact</p>
+    <div class="firstpage" id="home">
+      <div class="firstpagecontent">
+        <div class="firstpagetext">
+          <p>Hello, I'm <span class="myname">Daniel Degrassi</span>.</p>
+          <p>I'm a full stack developer</p>
+        </div>
+        <p id="scrollto2ndpage">Learn more about me<i class="fas fa-arrow-down"></i></p>
+      </div>
+    </div>
+    <nav class="navbar" id="myNavbar">
+      <p id="homebutton" class="active-nav">Home</p>
+      <p id="aboutbutton">About</p>
+      <p id="portfoliobutton">Portfolio</p>
+      <p id="contactbutton">Contact</p>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-		</nav>
+    </nav>
     <!-- div below is a hack to get waypoint.inView to work -->
     <div id="about-waypoint" class="wp-helper"></div>
     <div class= "pages" id="about">
-    	<p class="page-title bb-about">About</p>
-      <div class="bottom-border"></div>
+      <p class="page-title bb">About</p>
         <div class="text-center">
             <li class="about-keywords">
                 <i class="fas fa-rocket about-icon"></i>
@@ -66,9 +65,9 @@
               </div>
           </div>
           <div class="about-keywords" id="skills-tools-div">
-            <div>
+            <p id="skills-tools-title">
               Skills and Tools
-            </div>
+            </p>
             <div class="container">
               <div class="skills-tools">
                 <i class="fas fa-code skills-tools-icon"></i>
@@ -77,7 +76,7 @@
                 </div>
               </div>
               <div class="skills-tools">
-                <i class="fab fa-css3 skills-tools-icon"></i> 
+                <i class="fab fa-css3-alt skills-tools-icon"></i> 
                 <div class="css-text-fix">
                   CSS
                 </div>
@@ -110,41 +109,75 @@
               </div> 
             </div>
           </div>
+        </div>
       </div>
     </div>
     <div id="portfolio-waypoint" class="wp-helper"></div>
-    <div class= "pages" id="portfolio">
-    	<div class= "page-title bb-portfolio">Projects</div>
+    <section class= "pages" id="portfolio">
+      <div class= "page-title bb">Projects</div>
       <div class="bottom-border"></div>
-    	<div class="controls">
-    		<button type="button" class="control" data-filter="all">All</button>
-    		<button type="button" class="control" data-filter=".javascript">Javascript</button>
-    		<button type="button" class="control" data-filter=".ruby">Ruby/Rails</button>
-        <button type="button" class="control" data-filter=".student">Student</button>
-    	</div>
-    	<div class="container">
-    		<div class="row">
-		    	<div class="portfolio-container">
-		    		<img src= "images/chateau2.png" class="mix ruby" id="chateau">
-            <img src="/images/portfolio.png" class=" mix javascript">
-		    		<img src= "/images/delphi1.png" class="mix ruby student">    	
-		    		<img src="/images/flixster.png" class="mix ruby student">
-		    		
+      <div class="controls">
 
-	<!--     		<div class="gap"></div>
-	    		<div class="gap"></div>
-	    		<div class="gap"></div> -->
-	    		</div>
-	    	</div>
-	    </div>
-    </div>
+        <button type="button" class="control" data-filter=".javascript">Javascript</button>
+        <button type="button" class="control" data-filter=".ruby">Ruby/Rails</button>
+        <button type="button" class="control" data-filter=".student">Student</button>
+      </div>
+
+          <div id="gallery" class="container flex row wrap">
+            <div class="mix ruby" data-my-order="1">
+                <div class="card"></div>
+                <div class="text">
+                  <div class="bold">Château de Missery</div>
+                  <span class="highlight">Ruby on Rails</span>
+                </div>
+                <div class="button" id="chateau">LEARN MORE</div>
+            </div>
+            <div class="mix javascript " data-my-order="1">
+                <div class="card"></div>
+                <div class="text">
+                  <div class="bold">This very website!</div>
+                  <span class="highlight">Javascript &amp; Node.js</span>
+                </div>
+                <div class="button" id="portf">LEARN MORE</div>
+            </div>
+            <div class="mix ruby student" data-my-order="1">
+                <div class="card"></div>
+                <div class="text">
+                  <div class="bold">Delphi, a Yelp Clone</div>
+                  <span class="highlight">Ruby on Rails</span>
+                </div>
+                <div class="button" id="delphi">LEARN MORE</div>
+            </div>
+            <div class="mix ruby student" data-my-order="1">
+                <div class="card"></div>
+                <div class="text">
+                  <div class="bold">Flixster</div>
+                  <span class="highlight">Ruby on Rails</span>
+                </div>
+                <div class="button" id="flixster">LEARN MORE</div>
+            </div>
+            <div class="mix javascript student" data-my-order="1">
+                <div class="card"></div>
+                <div class="text">
+                  <div class="bold">Todo</div>
+                  <span class="highlight">My first Javascript App</span>
+                </div>
+                <div class="button" id="flixster">LEARN MORE</div>
+            </div>
+            <!-- invisible div to prevent wrap class from making things terrible. -->
+            <div class="mix javascript" data-my-order="1">
+                <div class="card"></div>
+            </div>                        
+          </div>
+
+    </section>
     <div id="contact-waypoint" class="wp-helper"></div>
     <div class= "pages" id="contact">
-    	<div class="page-title bb-contact">Contact</div>
+      <div class="page-title bb">Contact</div>
       <p class= text-under-title>Have a question or want to work together?</p>
-    	<div class="container">
+      <div class="container">
         <div class='text-center' id="thank-you">Thanks for your message, I'll get back to you as soon as I can!</div>
-    		<div id='contact-container'>
+        <div id='contact-container'>
 
           <form id="contact-form">
             <div>
@@ -155,17 +188,17 @@
               <input id="company" type="text" placeholder="Enter Company" name="company" size="50">
             </div>
             <div class="each-input">
-      			 <input id="contact-email" type="email" name="email" placeholder="Enter your email" class="input-style" required>
+             <input id="contact-email" type="email" name="email" placeholder="Enter your email" class="input-style" required>
             </div>
             <div class="each-input">
-      			  <textarea id="contact-content" name="message" placeholder="Your Message" class="input-style" resize="vertical" rows="13" required></textarea>
+              <textarea id="contact-content" name="message" placeholder="Your Message" class="input-style" resize="vertical" rows="13" required></textarea>
             </div>
             <div class="each-input submit-button-div">
-       			  <input class="submit-button" type="submit" value="Submit">
+              <input class="submit-button" type="submit" value="Submit">
             </div>
-      		</form>
+          </form>
         </div>
-     	</div>
+      </div>
       <div class="footer text-center" id="footer">
         <div id="back-to-top-div">
           <i id="back-to-top" class="fas fa-angle-double-up"></i>

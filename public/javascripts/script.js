@@ -28,9 +28,19 @@ pageHeights('#portfolio')
 pageHeights('#contact');
 
 
+mixitup('#gallery', {
+  load: {
+    filter: '.javascript'
+  }
+});
 // Focus on
-// instantianes .portfolio-container mixer
-var mixer = mixitup('.portfolio-container');
+// instantiates #gallery mixer with javascript as its 
+// default active.  WHY DOES WRAP CLASS SCREW IT UP??
+var mixer = mixitup('#gallery', {
+  load: {
+    filter: '.javascript'
+  }
+});
 
 
 // Responsive navbar
@@ -87,11 +97,13 @@ activePage('#contact', '#contactbutton');
 
 
 // Portfolio
-$('#chateau').hover(function(){
-  $(this).animate({opacity: 0}, 500)
-  }, function(){
-  $(this).animate({opacity: 1}, 500)
-});
+
+
+// $('#chateau').hover(function(){
+//   $(this).animate({opacity: 0}, 500)
+//   }, function(){
+//   $(this).animate({opacity: 1}, 500)
+// });
 // For future validation incase HTML5 validations don't work.
 // Lower Priority
 
