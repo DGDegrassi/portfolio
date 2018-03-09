@@ -27,6 +27,20 @@ pageHeights('#about');
 pageHeights('#portfolio')
 pageHeights('#contact');
 
+// Prevent Hover on Scroll
+var body = document.body,
+    timer;
+
+window.addEventListener('scroll', function() {
+  clearTimeout(timer);
+  if(!body.classList.contains('disable-hover')) {
+    body.classList.add('disable-hover')
+  }
+
+  timer = setTimeout(function(){
+    body.classList.remove('disable-hover')
+  },300);
+}, false);
 
 mixitup('#gallery', {
   load: {
@@ -95,15 +109,6 @@ activePage('#home', '#homebutton');
 activePage('#portfolio', '#portfoliobutton');
 activePage('#contact', '#contactbutton');
 
-
-// Portfolio
-
-
-// $('#chateau').hover(function(){
-//   $(this).animate({opacity: 0}, 500)
-//   }, function(){
-//   $(this).animate({opacity: 1}, 500)
-// });
 // For future validation incase HTML5 validations don't work.
 // Lower Priority
 
@@ -145,3 +150,28 @@ $("#contact-form").submit(function(){
 
     return false;
 });
+
+// MODAL TIME
+
+var modal = document.getElementById('myModal')
+  var trigger = document.getElementById("myportfolio");
+  var closeButton = document.querySelector(".close");
+console.log(trigger)
+  function toggleModal() {
+      modal.classList.toggle("show-modal");
+  }
+
+  function windowOnClick(event) {
+      if (event.target === modal) {
+          toggleModal();
+      }
+  }
+$('#gallery .button').click(function() {
+  console.log('sup dawg');
+  modal.classList.toggle("show-modal");
+});
+
+
+  // trigger.addEventListener("click", toggleModal);
+  closeButton.addEventListener("click", toggleModal);
+  window.addEventListener("click", windowOnClick);
