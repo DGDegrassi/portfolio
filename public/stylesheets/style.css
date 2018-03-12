@@ -277,6 +277,8 @@ a {
 	background-color:#1E303B;
 	color:white;
 	position:relative;
+	height:100%;
+
 }
 
 #contact-waypoint {
@@ -538,19 +540,19 @@ button:focus{
 
 		}
 
-		#modal-title {
+		.modal-title {
 			font-size: 30px;
 			margin-bottom: 2px;
 		}
 
-		#modal-undertitle {
+		.modal-undertitle {
 			color:grey;
 			padding-bottom: 15px;
 			margin-bottom: 15px;
 			border-bottom: 1px solid grey;
 		}
 
-		#modal-text {
+		.modal-text {
 
 		}
 
@@ -573,6 +575,7 @@ button:focus{
 			padding-bottom:7px;
 			border: 1px solid #CC0044;
 			transition: color 0.5s, background-color 0.5s;
+			visibility: hidden;
 		}
 
 		.modal-link:hover {
@@ -598,9 +601,8 @@ button:focus{
 /* Grid Breakpoints
 ---------------------------------------------------------------------- */
 
-@media screen and (max-width: 400px) {
-#gallery .mix .card {
-    width: 100vw; } }
+@media (max-width: 400px) {
+ }
 
 /* Images fill small screens*/
 @media(max-width:720px) {
@@ -616,10 +618,27 @@ button:focus{
 		margin-top: 0px;
 	}
 	#contact-form {
-		margin-left:0;
-		margin-right:0;
+		margin-left:0px;
+		margin-right:0px;
 		width:100%;
+		overflow:hidden;
 
+	}
+		.input-style {
+	    max-width: 96%; }
+}
+
+/* Two breakpoints below prevent footer from covering contact
+content on short pages*/
+@media(max-height:752px) {
+	#contact {
+		padding-bottom:160px;
+	}
+}
+
+@media(max-height:580px) {
+	#contact {
+		padding-bottom:160px;
 	}
 }
 @media(min-width:400px) {
@@ -636,7 +655,6 @@ button:focus{
     }
 
 }
-
 
 /* Navbar responsiveness*/
 @media(max-width:607px) {
@@ -664,16 +682,11 @@ button:focus{
     text-align: left;
   }
 
-        #footer {
-    	padding-top: 50px;
-    }
-}
-
 /* Hotfix for mixitup wrap silliness */
 @media(min-width: 1200px) {
 	.invis-div {
 		display:none;
-}
+	}
 }
 
 @media(min-width: 1600px) {

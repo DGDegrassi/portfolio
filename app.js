@@ -52,7 +52,7 @@ app.post('/contact', function (req, res) {
 	// to configure front end to do this when a form is filled
 	transporter.sendMail(mailOpts, function(err, info, next) {
 		if(err){
-			console.log('error log')
+			console.log(err)
 		} else {
 			console.log('success log');
 		}

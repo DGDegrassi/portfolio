@@ -153,25 +153,100 @@ $("#contact-form").submit(function(){
 
 // MODAL TIME
 
-var modal = document.getElementById('myModal')
+// var modal = document.getElementById('myModal')
+//   var trigger = document.getElementById("myportfolio");
+//   var closeButton = document.querySelector(".close");
+// console.log(trigger)
+//   function toggleModal() {
+//       modal.classList.toggle("show-modal");
+//   }
+
+//   function windowOnClick(event) {
+//       if (event.target === modal) {
+//           toggleModal();
+//       }
+//   }
+// $('#gallery .button').click(function() {
+//   console.log('sup dawg');
+//   modal.classList.toggle("show-modal");
+// });
+
+
+// closes modals
+// closeButton.addEventListener("click", toggleModal);
+// window.addEventListener("click", windowOnClick);
+
+// MODAL
+$(document).ready(function() {
+  var modalText = {
+    chateau: {
+      title: 'Château de Missery',
+      tag: 'CASTLE IN FRANCE',
+      detail: 'Talk all about the castle and the website itself',
+      link: 'http://chateaudemissery.herokuapp.com/',
+      img: '#'
+    },
+    myportfolio: {
+      title: 'dgdegrassiportfolio',
+      tag: 'all about me',
+      detail: 'talk about this portfolio and why its featured here',
+      img: '/images/modaltest.png'
+    }, 
+    delphi: {
+      title: 'Delphi',
+      tag: 'Student Project',
+      detail: 'A Yelp clone that integrates with the Google Maps API and includes features like user comments, star ratings, image uploading, and user authentication.',
+      link: 'https://delphi-daniel-degrassi.herokuapp.com/',
+      img: '#'
+    },
+    flixster: {
+      title: 'Flixster',
+      tag: 'STUDENT PROJECT',
+      detail: 'A two-sided, video-streaming marketplace platform that features credit card payment capabilities, user role management, complex user interfaces, and advanced database relationships.',
+      link: 'https://flixter-dan-degrassi.herokuapp.com/',
+      img: '#'
+    },
+    todo: {
+      title: 'Todoster',
+      tag: 'STUDENT PROJECT',
+      detail: 'This single-page to-do application features a fluid user interface that– by using JavaScript– allows users to rapidly add dynamic content.',
+      link: 'https://todoster-dan-degrassi.herokuapp.com/',
+      img: '#'
+    }
+  };
+
+  var modal = document.getElementById('myModal')
   var trigger = document.getElementById("myportfolio");
   var closeButton = document.querySelector(".close");
-console.log(trigger)
-  function toggleModal() {
-      modal.classList.toggle("show-modal");
-  }
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
 
-  function windowOnClick(event) {
-      if (event.target === modal) {
-          toggleModal();
-      }
-  }
-$('#gallery .button').click(function() {
-  console.log('sup dawg');
-  modal.classList.toggle("show-modal");
-});
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+  $('#gallery .button').click(function() {
+    fillModal(this.id);
+    modal.classList.toggle("show-modal");
+  });
 
 
-  // trigger.addEventListener("click", toggleModal);
+
+  // closes modals
+  $('#gallery.close')
   closeButton.addEventListener("click", toggleModal);
   window.addEventListener("click", windowOnClick);
+
+  function fillModal(id) {
+    console.log(modalText[id].img);
+
+    $('#modal-img').attr('src', modalText[id].img);
+    $('.modal-title').text(modalText[id].title);
+    $('.modal-text').text(modalText[id].detail);
+    $('.modal-undertitle').text(modalText[id].tag);
+    if (modalText[id].link) { $('.modal-link').css('visibility', 'visible').attr('onclick', "window.location.href='" + modalText[id].link +"'")};
+  };
+
+});
