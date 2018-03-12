@@ -39,22 +39,22 @@
             <li class="about-keywords">
                 <i class="fas fa-rocket about-icon"></i>
                 <div class="about-title">Fast</div>
-                <div class="about-text">Fast load times and lag free interaction, my highest priority.</div>
+                <div class="about-text">Users shouldn't experience load times or lag.</div>
             </li>
             <li class="about-keywords">
                 <i class="fab fa-medapps about-icon"></i>
                 <div class="about-title">Intuitive</div>
-                <div class="about-text">Strong preference for easy to use, intuitive UX/UI.</div>
+                <div class="about-text">UX/UI should speak for itself, be easy to use and read. </div>
             </li>
             <li class="about-keywords">
                 <i class="fab fa-gripfire about-icon"></i>
                 <div class="about-title">Dynamic</div>
-                <div class="about-text">Websites don't have to be static, I love making pages come to life.</div>
+                <div class="about-text">Websites that feel alive and interactive.</div>
             </li>
             <li class="about-keywords">
                 <i class="fas fa-mobile about-icon"></i>
                 <div class="about-title">Responsive</div>
-                <div class="about-text">My layouts will work on any device, big or small.</div>
+                <div class="about-text">Layouts that work with any device.</div>
             </li>
         </div>
         <div class="text-center">
@@ -63,6 +63,7 @@
               <div id="about-blurb">
                 I have a serious passion for all things coding, tackling complicated problems, and coming up with creative and effective solutions.  I want to dedicate my life to exploring and learning the ways of the Code Warrior and become a master.  Front-end, back-end, and beyond.
               </div>
+              <div id="q-or-op">Need my help?  Have a question?  Want to assist me on my quest?</div>
           </div>
           <div class="about-keywords" id="skills-tools-div">
             <p id="skills-tools-title">
@@ -117,35 +118,12 @@
     <div id="portfolio-waypoint" class="wp-helper"></div>
     <section class= "pages" id="portfolio">
       <div class= "page-title bb">Projects</div>
-      <div id="myModal" class="modal">
-        <div id="modal-box">
-          <img src="#" id="modal-img">
-          <div id="modal-container">
-            <div class="modal-title">
-              title
-            </div>
-            <div class="modal-undertitle">
-              undertitle
-            </div>
-            <div class="modal-text">
-                text
-            </div>
-        </div>
-        <div id='modal-footer'>
-          <form>
-            <input type="button" class="modal-link" value="Link" onclick="window.location.href='#'"/>
-          </form>
-        </div>
-        <span class="close">&times;</span>
-        </div>
 
-        </div>
-      </div>
       <div class="bottom-border"></div>
       <div class="controls">
 
-        <button type="button" class="control" data-filter=".javascript">Javascript</button>
-        <button type="button" class="control" data-filter=".ruby">Ruby/Rails</button>
+        <button type="button" class="control" data-filter=".javascript">Javascript/Node.js</button>
+        <button type="button" class="control" data-filter=".ruby">Ruby on Rails</button>
 <!--         <button type="button" class="control" data-filter=".nodejs">Node.js</button> -->
       </div>
 
@@ -191,7 +169,7 @@
             <div class="button" id="todo">LEARN MORE</div>
           </div>
         <!-- invisible div to prevent wrap class from making things terrible. -->
-          <div class="mix javascript nodejs" data-my-order="1">
+          <div class=" javascript nodejs" data-my-order="1">
             <div class="card invis-div"></div>
           </div>                        
         </div>
@@ -200,14 +178,14 @@
     <div id="contact-waypoint" class="wp-helper"></div>
     <div class= "pages" id="contact">
       <div class="page-title bb">Contact</div>
-      <p class= text-under-title>Have a question or want to work together?</p>
+      <p class= text-under-title>Have an inquiry?</p>
       <div class="container">
         <div class='text-center' id="thank-you">Thanks for your message, I'll get back to you as soon as I can!</div>
         <div id='contact-container'>
 
           <form id="contact-form">
             <div>
-              <input id="contact-name" type="text" name="name" placeholder="Enter your name." class="input-style" required>
+              <input id="contact-name" type="text" name="name" placeholder="Enter your name" class="input-style" required>
             </div>
             <!-- Company input doesn't show up on page to catch spambots -->
             <div>
@@ -238,7 +216,28 @@
       </div>
     </div>
 
-
+<!-- MODAL -->
+    <div id="myModal" class="modal">
+      <div id="modal-box">
+        <img src="#" id="modal-img">
+        <div id="modal-container">
+          <div class="modal-title">
+            title
+          </div>
+          <div class="modal-undertitle">
+            undertitle
+          </div>
+          <div class="modal-text">
+              text
+          </div>
+      </div>
+      <div id='modal-footer'>
+        <span class="close">&times;</span>
+        <form>
+          <input type="button" class="modal-link" value="View Site" onclick="window.location.href='#'"/>
+        </form>
+      </div>
+    </div>
 
 
     <script src=https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js></script>

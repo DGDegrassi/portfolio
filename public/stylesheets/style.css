@@ -140,6 +140,12 @@ a {
 	width:400px;
 }
 
+#q-or-op {
+	color:#CC0044;
+	width:200px;
+	margin: auto;
+	cursor: pointer;
+}
 #skills-tools-title {
 	font-size: 32px;
 	margin-top:0px;
@@ -217,7 +223,8 @@ a {
         text-align: center;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-        color: #1B242F; }
+        color: #1B242F; 
+    	}
 #gallery .text .bold, #gallery .button .bold {
         font-size: 16pt; 
 }
@@ -254,24 +261,22 @@ a {
 #gallery .mix .card {
           height: 400px;
           width:400px;
+
           cursor: pointer;
           transition: opacity .5s; }
 
-/* Invisible div hotfix for mixitup wrap issues
-   Part two of this is in @media stuff below */
-.invis-div {
-	cursor: default!important;
-}
 
  #gallery .mix:hover .card {
-          opacity: 0; }
+        	opacity: 0; 
+      		cursor: default;}
 
 #gallery .mix:hover .text {
           opacity: 1;
           top: 33%; }
 #gallery .mix:hover .button {
           opacity: 1;
-          bottom: 33%; }
+          bottom: 33%; 
+      	cursor: pointer;}
 
 #contact {
 	background-color:#1E303B;
@@ -520,7 +525,7 @@ button:focus{
 /* MODAL BOX*/
 	#modal-box {
         position: absolute;
-        top: 43.33%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: white;
@@ -561,7 +566,7 @@ button:focus{
 			bottom:0;
 			left:0;
 			margin-left:15px;
-			margin-bottom:20px;
+			margin-bottom:10px;
 			width:100%;
 			margin-right:-15px;
 		}
@@ -574,7 +579,7 @@ button:focus{
 			padding-top:7px;
 			padding-bottom:7px;
 			border: 1px solid #CC0044;
-			transition: color 0.5s, background-color 0.5s;
+			transition: color 1s, background-color 1s;
 			visibility: hidden;
 		}
 
@@ -587,8 +592,12 @@ button:focus{
 	.close {
 		color: #aaa;
 		float: right;
-		font-size:28px;
+		font-size:40px;
 		font-weight: bold;
+		margin-right: 25px;
+		margin-top:-12px;
+		transition: color 1s;
+
 	}
 
 	.close:hover, .close:focus {
@@ -601,14 +610,25 @@ button:focus{
 /* Grid Breakpoints
 ---------------------------------------------------------------------- */
 
-@media (max-width: 400px) {
+@media (max-width: 420px) {
+	#about-blurb {
+		width:auto;
+	}
+
+	.mix, .card {
+		overflow:hidden;
+	}
+		#modal-box {
+		width:100%;
+		max-height:60%;
+		margin-top: 20%;
+	}
  }
 
 /* Images fill small screens*/
 @media(max-width:720px) {
-	#modal-box {
-		width:100%;
-	}
+	#modal-box {width:100%;}
+
 
 	#skills-tools {
 		width:90%;
@@ -616,18 +636,21 @@ button:focus{
 
 	.skills-tools-div {
 		margin-top: 0px;
+
 	}
 	#contact-form {
 		margin-left:0px;
 		margin-right:0px;
 		width:100%;
-		overflow:hidden;
+
 
 	}
 		.input-style {
 	    max-width: 96%; }
-}
 
+	    .submit-button-div {
+	    	margin-right:7px;
+	    }
 /* Two breakpoints below prevent footer from covering contact
 content on short pages*/
 @media(max-height:752px) {
@@ -640,20 +663,6 @@ content on short pages*/
 	#contact {
 		padding-bottom:160px;
 	}
-}
-@media(min-width:400px) {
-/*section:nth-of-type(3) #gallery .mix .card {
-      height: 300px; }
-  }
-*/
-
-@media(min-width:720px) {
-
-    #skills-tools-div {
-    	margin-left:70px;
-
-    }
-
 }
 
 /* Navbar responsiveness*/
@@ -681,13 +690,6 @@ content on short pages*/
     display: block;
     text-align: left;
   }
-
-/* Hotfix for mixitup wrap silliness */
-@media(min-width: 1200px) {
-	.invis-div {
-		display:none;
-	}
-}
 
 @media(min-width: 1600px) {
 	#skills-tools {
