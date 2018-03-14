@@ -41,7 +41,6 @@ a {
 
 .firstpagecontent {
 	display:inline-block;
-/*	padding-top: 30%;*/
 	font-size: 36px;
 	color: white;
 	text-shadow: 2px 2px black;
@@ -108,6 +107,7 @@ a {
 	border-bottom:3px solid black;
 	margin-bottom:40px;
 }
+
 #about .bb:after, #contact .bb:after {
 	border-bottom: 3px solid white;
 }
@@ -115,10 +115,12 @@ a {
 .pages {
 	padding-top:50px;
 }
+
 /* hack to get waypoint.inView to work properly*/
 .wp-helper {
 	height:10px
 }
+
 #about {
 	padding-top:50px;
 	background-color:#1E303B;
@@ -169,8 +171,6 @@ a {
 #skills-tools-title {
 	font-size: 32px;
 	margin-top:0px;
-
-
 }
 
 #skills-tools-title:after {
@@ -202,6 +202,7 @@ a {
 	width: 200px;
 	word-wrap: break-word;
 }
+
 .about-img {
 	max-width:250px;
 	height:auto;
@@ -214,6 +215,7 @@ a {
 	font-size:100px;
 	margin-bottom:20px;
 }
+
 #portfolio, #portfolio-waypoint {
 	background-color: #BFB8B8;
 }
@@ -222,11 +224,62 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
-  .flex.row {
-    flex-direction: row; }
-  .flex.wrap {
-    flex-wrap: wrap; }
+  align-items: center;
+}
+.flex.row {
+    flex-direction: row;
+}
+
+.flex.wrap {
+    flex-wrap: wrap; 
+}
+
+/* MIXITUP CONTROLS */
+.controls {
+    padding: 1rem;
+    background: #333;
+    font-size: 0.1px;
+    background: transparent;
+    text-align: center;
+}
+
+.control {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 25px;
+    background:transparent;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border:none;
+    transition: background 1s;
+
+}
+
+button:focus{
+	outline: none;
+}
+
+.mixitup-control-active {
+    background: #CC0044;
+    color:#F5F5F5;
+    border-radius: 5px;
+
+}
+/* MIXITUP GALLERY */
+#gallery {
+  margin-top: 20px;
+}
+
+#gallery .text, #gallery .button {
+	z-index: 2;
+	text-align: center;
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+	color: #1B242F; 
+}
 
 #gallery .text {
 	top:0;
@@ -236,65 +289,67 @@ a {
 	text-align: center;
 	right:0;
 }
-#gallery {
-  margin-top: 20px;
-}
-#gallery .text, #gallery .button {
-        z-index: 2;
-        text-align: center;
-        opacity: 0;
-        transition: all 0.3s ease-in-out;
-        color: #1B242F; 
-    	}
 #gallery .text .bold, #gallery .button .bold {
-        font-size: 16pt; 
+	font-size: 16pt; 
 }
-#gallery .button{
-        right: 0;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        border: 2px solid #E31B6D;
-        width: 170px;
-        margin: 0 auto;
-        font-size: 13pt;
-        padding: 7px 0; }
+#gallery .button {
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	border: 2px solid #E31B6D;
+	width: 170px;
+	margin: 0 auto;
+	font-size: 13pt;
+	padding: 7px 0; 
+}
+
 #gallery .mix {
 	position:relative;
-
-    }
+}
 
 #gallery .mix .button:hover {
-          background: #CC0044;
-          color: #fff; }
+	background: #CC0044;
+	color: #fff;
+}
+
 #gallery .mix:nth-child(1) .card {
-          background: url("/images/chateau2.png") center center/cover; }
+	background: url("/images/chateau2.png") center center/cover;
+}
+
 #gallery .mix:nth-child(2) .card {
-          background: url("/images/portfolio.png") center center/cover; }
+	background: url("/images/portfolio.png") center center/cover; 
+}
+
 #gallery .mix:nth-child(3) .card {
-          background: url("/images/delphi1.png") center center/cover; }
+	background: url("/images/delphi1.png") center center/cover;
+}
+
 #gallery .mix:nth-child(4) .card {
-          background: url("/images/flixster.png") center center/cover; }
+	background: url("/images/flixster.png") center center/cover;
+}
+
 #gallery .mix:nth-child(5) .card {
-	background: url("/images/todo.png") center center/cover; }
+	background: url("/images/todo.png") center center/cover;
+}
 
 #gallery .mix .card {
 	height: 400px;
 	width:400px;
-
 	cursor: pointer;
 	transition: opacity .5s; 
 }
 
  #gallery .mix:hover .card {
 	opacity: 0; 
-	cursor: default;}
+	cursor: default;
 }
 
 #gallery .mix:hover .text {
-          opacity: 1;
-          top: 33%; }
-#gallery .mix:hover .button {
+	opacity: 1;
+	top: 33%;
+}
+#gallery .mix:hover .button{
 	opacity: 1;
 	bottom: 33%; 
 	cursor: pointer;
@@ -309,12 +364,14 @@ a {
 }
 
 #contact-waypoint {
-		background-color:#1E303B;
-		padding-top:-10px;
+	background-color:#1E303B;
+	padding-top:-10px;
 }
+
 .bb-contact {
 	border-color:white!important;
 }
+
 .submit-button-div {
 	text-align:right;
 	margin-right:-3px;
@@ -329,13 +386,13 @@ a {
 	padding-right:10px;
 	border-width: 3px;
 	transition: background-color 3s;
-
 }
 
 .submit-button:hover {
 	cursor: pointer;
 	background-color: #CC0044;
 }
+
 #contact-form {
 	text-align: center;
 	margin-left:25%;
@@ -355,17 +412,17 @@ a {
 	margin-top:50px;
 	border: 1px solid #1E303B;
 }
-#contact-content {
-}
 
 input, textarea {
 	font: 16px "Raleway", Helvetica, Arial, sans-serif;
 	color:white;
 }
+
 textarea {
 	resize: vertical;
 	padding:1px;
 }
+
 .input-style {
 	margin-bottom:3px;
 	width:100%;
@@ -388,6 +445,7 @@ textarea {
 	margin-top: 40px;
 	color:#05C9FF;
 }
+
 #company {
 	visibility: hidden;
 	display:none;
@@ -397,7 +455,6 @@ textarea {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-/*	min-height: 100vh;*/
 }
 
 .loader {
@@ -472,6 +529,7 @@ nav .icon {
 .copyright-date {
 	color: #CC0044;
 }
+
 #back-to-top {
 	cursor:pointer;
 	margin-top:-500px;
@@ -483,46 +541,6 @@ nav .icon {
 #back-to-top:hover {
 	background-color:#CC0044;
 }
-/* Mixitup */
-
-/* Controls
----------------------------------------------------------------------- */
-
-.controls {
-    padding: 1rem;
-    background: #333;
-    font-size: 0.1px;
-    background: transparent;
-    text-align: center;
-}
-
-.control {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 25px;
-    background:transparent;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border:none;
-    transition: background 1s;
-
-}
-
-button:focus{
-	outline: none;
-}
-
-.mixitup-control-active {
-    background: #CC0044;
-    color:#F5F5F5;
-    border-radius: 5px;
-
-}
-
-
 
 /* MODAL */
 .modal {
@@ -561,11 +579,6 @@ button:focus{
 			height:100px;
 		}
 
-		#modal-pic-container {
-/*			position:relative;
-			text-align:center;
-			background-color: #272822;*/
-		}
 
 		#modal-img {
 			max-width:100%;
@@ -583,10 +596,6 @@ button:focus{
 			padding-bottom: 15px;
 			margin-bottom: 15px;
 			border-bottom: 1px solid grey;
-		}
-
-		.modal-text {
-
 		}
 
 		#modal-footer {
@@ -616,10 +625,11 @@ button:focus{
 		.modal-link:hover {
 			color:#CC0044;
 			background-color:white;
+			cursor: pointer;
 
 		}
 
-/* CLOSE BUTTON */
+/* CLOSE MODAL BUTTON */
 	.close {
 		color: #aaa;
 		position:absolute;
@@ -650,7 +660,8 @@ button:focus{
 	.mix, .card {
 		overflow:hidden;
 	}
-		#modal-box {
+
+	#modal-box {
 		width:100%;
 		max-height:60%;
 		margin-top: 20%;
@@ -665,6 +676,19 @@ button:focus{
 		display:none;
 	}
 }
+
+
+@media(min-width: 1600px) {
+	#skills-tools {
+		width:30%;
+	}
+	#contact-form {
+		margin-left:32.5%;
+		margin-right:32.5%;
+		width:45%;
+	}
+}
+
 /* Images fill small screens*/
 @media(max-width:720px) {
 	#modal-box {width:100%;}
@@ -722,23 +746,12 @@ content on short pages*/
   	}
 
   	.navbar.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+	    position: absolute;
+	    right: 0;
+	    top: 0;
   }
-  .navbar.responsive a, .navbar.responsive p {
-    float: none;
-    display: block;
-    text-align: left;
+	.navbar.responsive a, .navbar.responsive p {
+	    float: none;
+	    display: block;
+	    text-align: left;
   }
-
-@media(min-width: 1600px) {
-	#skills-tools {
-		width:30%;
-	}
-	#contact-form {
-		margin-left:32.5%;
-		margin-right:32.5%;
-		width:45%;
-	}
-}

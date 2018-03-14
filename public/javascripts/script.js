@@ -198,7 +198,6 @@ $(document).ready(function() {
   var closeButton = document.querySelector(".close");
     function toggleModal() {
         modal.classList.toggle("show-modal");
-        modalText
     }
 
     function windowOnClick(event) {
@@ -226,7 +225,6 @@ $(document).ready(function() {
 // first if sets myportfolio.link to null.  Needs to be adapted to allow
 // multiple linkless modalText's to hide their link
     if(modalText[id].title == 'My Portfolio') { $('.modal-link').css('visibility', 'hidden')};
-    console.log(modalText[id].link);
 // Check for a link, and if present will show the link button
     if (modalText[id].link) { $('.modal-link').css('visibility', 'visible').attr('onclick', "window.location.href='" + modalText[id].link +"'")};
   };
