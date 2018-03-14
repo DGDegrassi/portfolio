@@ -14,6 +14,10 @@ a {
   pointer-events: none; 
 }
 
+#preload {
+	display:none;
+}
+
 .firstpage {
 	position:relative;
 	background-color: #000000;
@@ -104,7 +108,9 @@ a {
 	border-bottom:3px solid black;
 	margin-bottom:40px;
 }
-
+#about .bb:after, #contact .bb:after {
+	border-bottom: 3px solid white;
+}
 
 .pages {
 	padding-top:50px;
@@ -115,7 +121,12 @@ a {
 }
 #about {
 	padding-top:50px;
-	background-color:#F5F5F5;
+	background-color:#1E303B;
+	color:#F5F5F5;
+}
+
+#about-waypoint {
+	background-color: #1E303B;
 }
 
 .text-center {
@@ -135,20 +146,30 @@ a {
 
 }
 
+
 #about-blurb {
 	margin-top:20px;
-	width:400px;
+	width:450px;
+}
+
+#skills-tools-div {
+	width:500px;
+	margin-left:-40px;
+
 }
 
 #q-or-op {
-	color:#CC0044;
-	width:200px;
-	margin: auto;
+	color:#05C9FF;
+	width:250px;
 	cursor: pointer;
+	margin:auto;
+	text-decoration:underline;
+
 }
 #skills-tools-title {
 	font-size: 32px;
 	margin-top:0px;
+
 
 }
 
@@ -158,7 +179,7 @@ a {
 	margin: 0 auto;
 	width: 100px;
 	padding-top:35px;
-	border-bottom:2px solid black;
+	border-bottom:2px solid white;
 	margin-bottom:0px;
 }
 
@@ -184,8 +205,8 @@ a {
 .about-img {
 	max-width:250px;
 	height:auto;
-	border-radius:20px;
-
+	border-radius:2100px;
+	margin-top:5px;
 	border: 1px solid #021a40;
 }
 
@@ -194,7 +215,7 @@ a {
 	margin-bottom:20px;
 }
 #portfolio, #portfolio-waypoint {
-	background-color: #9DA1A3;
+	background-color: #BFB8B8;
 }
 
 .flex {
@@ -240,10 +261,9 @@ a {
         padding: 7px 0; }
 #gallery .mix {
 	position:relative;
-/*	display:none;*/
+
     }
-/*#gallery .mix .waypoint {
-          background: #fff; }*/
+
 #gallery .mix .button:hover {
           background: #CC0044;
           color: #fff; }
@@ -259,24 +279,26 @@ a {
 	background: url("/images/todo.png") center center/cover; }
 
 #gallery .mix .card {
-          height: 400px;
-          width:400px;
+	height: 400px;
+	width:400px;
 
-          cursor: pointer;
-          transition: opacity .5s; }
-
+	cursor: pointer;
+	transition: opacity .5s; 
+}
 
  #gallery .mix:hover .card {
-        	opacity: 0; 
-      		cursor: default;}
+	opacity: 0; 
+	cursor: default;}
+}
 
 #gallery .mix:hover .text {
           opacity: 1;
           top: 33%; }
 #gallery .mix:hover .button {
-          opacity: 1;
-          bottom: 33%; 
-      	cursor: pointer;}
+	opacity: 1;
+	bottom: 33%; 
+	cursor: pointer;
+}
 
 #contact {
 	background-color:#1E303B;
@@ -495,7 +517,7 @@ button:focus{
 
 .mixitup-control-active {
     background: #CC0044;
-    color:white;
+    color:#F5F5F5;
     border-radius: 5px;
 
 }
@@ -539,6 +561,12 @@ button:focus{
 			height:100px;
 		}
 
+		#modal-pic-container {
+/*			position:relative;
+			text-align:center;
+			background-color: #272822;*/
+		}
+
 		#modal-img {
 			max-width:100%;
 			max-height:auto;
@@ -565,10 +593,11 @@ button:focus{
 			position:fixed;
 			bottom:0;
 			left:0;
-			margin-left:15px;
+
 			margin-bottom:10px;
 			width:100%;
 			margin-right:-15px;
+						text-align:center;
 		}
 
 		.modal-link {
@@ -581,27 +610,30 @@ button:focus{
 			border: 1px solid #CC0044;
 			transition: color 1s, background-color 1s;
 			visibility: hidden;
+
 		}
 
 		.modal-link:hover {
 			color:#CC0044;
 			background-color:white;
+
 		}
 
 /* CLOSE BUTTON */
 	.close {
 		color: #aaa;
-		float: right;
+		position:absolute;
 		font-size:40px;
 		font-weight: bold;
-		margin-right: 25px;
-		margin-top:-12px;
+		margin-top:-8px;
 		transition: color 1s;
+
+		right:8px;
 
 	}
 
 	.close:hover, .close:focus {
-		color:black;
+		color:#CC0044;
 		text-decoration: none;
 		cursor: pointer;
 	}
@@ -625,6 +657,14 @@ button:focus{
 	}
  }
 
+
+/* Invis div hack.  needs work. */
+
+@media(min-width: 1215px){
+	.invis-div {
+		display:none;
+	}
+}
 /* Images fill small screens*/
 @media(max-width:720px) {
 	#modal-box {width:100%;}
@@ -645,12 +685,13 @@ button:focus{
 
 
 	}
-		.input-style {
-	    max-width: 96%; }
+	.input-style {
+    max-width: 96%; }
 
-	    .submit-button-div {
-	    	margin-right:7px;
-	    }
+    .submit-button-div {
+    	margin-right:7px;
+    }
+}
 /* Two breakpoints below prevent footer from covering contact
 content on short pages*/
 @media(max-height:752px) {

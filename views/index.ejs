@@ -18,8 +18,8 @@
     <div class="firstpage" id="home">
       <div class="firstpagecontent">
         <div class="firstpagetext">
-          <p>Hello, I'm <span class="myname">Daniel Degrassi</span>.</p>
-          <p>I'm a full stack developer</p>
+          <p>Hi, I'm <span class="myname">Daniel Degrassi</span> and</p>
+          <p>I'm a full stack developer.</p>
         </div>
         <p id="scrollto2ndpage">Learn more about me<i class="fas fa-arrow-down"></i></p>
       </div>
@@ -44,7 +44,7 @@
             <li class="about-keywords">
                 <i class="fab fa-medapps about-icon"></i>
                 <div class="about-title">Intuitive</div>
-                <div class="about-text">UX/UI that speaks for itself, be easy to use and read. </div>
+                <div class="about-text">UX/UI that speaks for itself, is easy to use &amp; read. </div>
             </li>
             <li class="about-keywords">
                 <i class="fab fa-gripfire about-icon"></i>
@@ -54,11 +54,11 @@
             <li class="about-keywords">
                 <i class="fas fa-mobile about-icon"></i>
                 <div class="about-title">Responsive</div>
-                <div class="about-text">Layouts that work with any device.</div>
+                <div class="about-text">Layouts that work with <br/>any device.</div>
             </li>
         </div>
         <div class="text-center">
-          <div class="about-keywords">
+          <div class="about-keywords" l>
               <img src="images/me2.jpeg" class="about-img">
               <div id="about-blurb">
                 I have a serious passion for all things coding, tackling complicated problems, and coming up with creative and effective solutions.  I want to dedicate my life to exploring and learning the ways of the Code Warrior and become a master.  Front-end, back-end, and beyond.
@@ -122,9 +122,8 @@
       <div class="bottom-border"></div>
       <div class="controls">
 
-        <button type="button" class="control" data-filter=".javascript">Javascript/Node.js</button>
         <button type="button" class="control" data-filter=".ruby">Ruby on Rails</button>
-<!--         <button type="button" class="control" data-filter=".nodejs">Node.js</button> -->
+        <button type="button" class="control" data-filter=".javascript">Javascript/Node.js</button>
       </div>
 
       <div id="gallery" class="container flex row wrap">          
@@ -169,7 +168,7 @@
             <div class="button" id="todo">LEARN MORE</div>
           </div>
         <!-- invisible div to prevent wrap class from making things terrible. -->
-          <div class=" javascript nodejs" data-my-order="1">
+          <div class="mix javascript nodejs" data-my-order="1">
             <div class="card invis-div"></div>
           </div>                        
         </div>
@@ -178,7 +177,7 @@
     <div id="contact-waypoint" class="wp-helper"></div>
     <div class= "pages" id="contact">
       <div class="page-title bb">Contact</div>
-      <p class= text-under-title>Have an inquiry?</p>
+      <p class= text-under-title>Have an inquiry or want to work together?</p>
       <div class="container">
         <div class='text-center' id="thank-you">Thanks for your message, I'll get back to you as soon as I can!</div>
         <div id='contact-container'>
@@ -219,7 +218,10 @@
 <!-- MODAL -->
     <div id="myModal" class="modal">
       <div id="modal-box">
-        <img src="#" id="modal-img">
+        <div id="modal-pic-container">
+          <span class="close">&times;</span>
+          <img src="#" id="modal-img">
+        </div>
         <div id="modal-container">
           <div class="modal-title">
             title
@@ -232,13 +234,26 @@
           </div>
       </div>
       <div id='modal-footer'>
-        <span class="close">&times;</span>
+
         <form>
           <input type="button" class="modal-link" value="View Site" onclick="window.location.href='#'"/>
         </form>
       </div>
     </div>
 
+    <div id='preload'>
+      <img src='/images/me2.jpeg'>
+      <img src='/images/chateau4.png'>
+      <img src='/images/portfolio1.png'>
+      <img src='/images/delphi2.png'>
+      <img src='/images/flixster1.png'>
+      <img src='/images/todo1.png'>
+      <img src='/images/chateau2.png'>
+      <img src='/images/portfolio.png'>
+      <img src='/images/delphi1.png'>
+      <img src='/images/flixster.png'>
+      <img src='/images/todo.png'>
+    </div>
 
     <script src=https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.0/mixitup.min.js></script>
     <script src="/javascripts/script.js"></script>

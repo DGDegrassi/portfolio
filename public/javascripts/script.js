@@ -44,17 +44,17 @@ window.addEventListener('scroll', function() {
 
 mixitup('#gallery', {
   load: {
-    filter: '.javascript'
+    filter: '.ruby'
   }
 });
-// Focus on
+
 // instantiates #gallery mixer with javascript as its 
 // default active.  WHY DOES WRAP CLASS SCREW IT UP??
-var mixer = mixitup('#gallery', {
-  load: {
-    filter: '.javascript'
-  }
-});
+// var mixer = mixitup('#gallery', {
+//   load: {
+//     filter: '.javascript'
+//   }
+// });
 
 
 // Responsive navbar
@@ -93,7 +93,7 @@ var activePage = function(page, active){
 };
 
 // Scroll to 'About' page when button on first page is clicked
-scrollToPage('#scrollto2ndpage', '#about');
+scrollToPage('#scrollto2ndpage', '#about-waypoint');
 
 // Scrolls to each page when you click on navbar
 scrollToPage('#homebutton', '.firstpage');
@@ -167,7 +167,7 @@ $(document).ready(function() {
     myportfolio: {
       title: 'My Portfolio',
       tag: 'Deep dive in to Javascript',
-      detail: "When I started building this website, I only had a small amount of experience with Javascript, and none with Nodejs.  I've since became very comfortable with and gained an appreciation for both. I wrote the code above after being unable to find a form submitted response clean enough for what I wanted.  If you want to see what it does, say hi!  This just a few of the many lines of code that I'm proud of in this project.",
+      detail: "When I started building this website, I only had a small amount of experience with Javascript, and none with Nodejs.  I've since became very comfortable with and gained an appreciation for both. I wrote the code above after being unable to find a form submitted response clean enough for what I wanted.  If you want to see what it does, use the contact form and say hi!  This just a few of the many lines of code that I'm proud of in this project.",
       img: '/images/portfolio1.png'
     }, 
     delphi: {
@@ -198,6 +198,7 @@ $(document).ready(function() {
   var closeButton = document.querySelector(".close");
     function toggleModal() {
         modal.classList.toggle("show-modal");
+        modalText
     }
 
     function windowOnClick(event) {
@@ -218,12 +219,15 @@ $(document).ready(function() {
   window.addEventListener("click", windowOnClick);
 
   function fillModal(id) {
-    console.log(modalText[id].img);
-
     $('#modal-img').attr('src', modalText[id].img);
     $('.modal-title').text(modalText[id].title);
     $('.modal-text').text(modalText[id].detail);
     $('.modal-undertitle').text(modalText[id].tag);
+// first if sets myportfolio.link to null.  Needs to be adapted to allow
+// multiple linkless modalText's to hide their link
+    if(modalText[id].title == 'My Portfolio') { $('.modal-link').css('visibility', 'hidden')};
+    console.log(modalText[id].link);
+// Check for a link, and if present will show the link button
     if (modalText[id].link) { $('.modal-link').css('visibility', 'visible').attr('onclick', "window.location.href='" + modalText[id].link +"'")};
   };
 
