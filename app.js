@@ -9,13 +9,21 @@ var nodemailer = require('nodemailer');
 var xoauth2 = require('xoauth2');
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var helmet = require('helmet');
+var session = require('express-session');
+var compression = require('compression');
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//express session
+app.set('trust proxy', 1);
+app.use(session({
+	secret:'s3Cr3t',
+	name: 'sessionId'
+}));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -23,7 +31,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(helmet());
+app.use(compression())
 app.use('/', index);
 app.use('/users', users);
 
@@ -52,9 +61,9 @@ app.post('/contact', function (req, res) {
 	// to configure front end to do this when a form is filled
 	transporter.sendMail(mailOpts, function(err, info, next) {
 		if(err){
-			console.log(err)
+
 		} else {
-			console.log('success log');
+
 		}
 	});
 
