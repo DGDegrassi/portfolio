@@ -1,5 +1,6 @@
 require('dotenv').config();
 var express = require('express');
+var helmet = require('helmet');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -24,6 +25,7 @@ app.use(session({
 	secret:'s3Cr3t',
 	name: 'sessionId'
 }));
+app.use(helmet.frameguard({action: 'allow-from', domain: 'danieldegrassi.eu'}));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
