@@ -226,7 +226,7 @@ $(document).ready(function() {
 // multiple linkless modalText's to hide their link
     if(modalText[id].title == 'My Portfolio') { $('.modal-link').css('visibility', 'hidden')};
 // Check for a link, and if present will show the link button
-    if (modalText[id].link) { $('.modal-link').css('visibility', 'visible').attr('onclick', "window.location.href='" + modalText[id].link +"'")};
+    if (modalText[id].link) { $('.modal-link').css('visibility', 'visible').attr('onclick', "window.open('" + modalText[id].link +"', 'pwin')")};
   };
 
 });
