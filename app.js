@@ -1,6 +1,6 @@
 require('dotenv').config();
 var express = require('express');
-var frameguard = require('frameguard');
+var frameguard = require('frameguard')
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -27,9 +27,9 @@ app.use(session({
 }));
 // sets x-frame-option
 app.use(frameguard({
-	action: 'allow-from', 
-	domain: 'danieldegrassi.eu'
-}));
+  action: 'allow-from',
+  domain: 'danieldegrassi.eu'
+}))
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
