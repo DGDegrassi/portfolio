@@ -29,8 +29,7 @@ app.use(session({
 }));
 // sets x-frame-option
 app.use(frameguard({
-  action: 'allow-from',
-  domain: 'danieldegrassi.eu'
+  action: 'allowall'
 }));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
