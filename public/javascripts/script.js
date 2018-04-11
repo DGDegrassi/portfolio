@@ -161,7 +161,7 @@ $(document).ready(function() {
       title: 'Château de Missery',
       tag: 'CASTLE IN FRANCE',
       detail: 'Built a responsive, budget friendly, search engine optimized, and beautiful web application using Ruby, HTML, CSS, with a touch of Javascript. I integrated a free CMS to allow the client to update and create new content and pages on their site',
-      link: 'www.chateaudemissery.com',
+      link: 'https://www.chateaudemissery.com/',
       img: '/images/chateau4.png'
     },
     myportfolio: {
